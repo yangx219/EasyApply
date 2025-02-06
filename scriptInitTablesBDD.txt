@@ -1,0 +1,62 @@
+drop table candidature cascade constraints;
+drop table entretien cascade constraints;
+drop table candidat cascade constraints;
+
+
+
+
+
+create table candidat(
+    idc int primary key,
+    nom varchar2(20) not null, 
+    prenom varchar2(50) not null, 
+    identifiant varchar(100) unique not null, 
+    motDePasse varchar(250) not null
+);
+
+
+create table entretien(
+    ide int primary key,
+    statut varchar2(20) not null, check ( statut in ('à venir', 'aucune proposition', 'dejà passé')), 
+    date_entretien DATE 
+ );
+
+
+
+
+create table candidature(
+    id int primary key,
+    idc int not null, foreign key(idc) references candidat,
+    poste varchar(250) not null,
+    entreprise varchar(250) not null,
+    adresse varchar(250) not null,
+    date_candidature DATE not null,
+    competences_exigees varchar(500),
+    statut_cond varchar(50) not null, check ( statut_cond in ('accepté', 'refusé', 'en attente'))
+);
+
+
+CREATE TABLE historique (
+    id INT ,
+    idc INT NOT NULL, 
+    action VARCHAR(250) NOT NULL,
+    date_action DATE NOT NULL
+);
+
+    CREATE TABLE avis (
+    id INT ,    
+    adresse VARCHAR(250) NOT NULL,
+    avis VARCHAR(250)  NOT NULL
+);
+
+
+
+
+    
+create sequence seq_util start with 1 increment by 1;
+create sequence seq_entretien start with 1 increment by 1;
+create sequence seq_candidature start with 1 increment by 1;
+
+
+SELECT table_name
+FROM user_tables;

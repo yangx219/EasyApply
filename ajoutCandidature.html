@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head> 
+</head>
+<body>
+    <div id="container">
+        <form action="ajoutCandidature.php" method="POST">
+            <h1>Candidature</h1>
+            <label for="nomDuPoste">Nom du Poste</label>
+            <input type="text" id="nomDuPoste" name="nomDuPoste" placeholder="Nom du poste" required><br>
+            <label for="nomEntreprise">Nom de l'entreprise</label>
+            <input type="text" id="nomEntreprise" name="nomEntrepise" placeholder="Nom de l'entreprise" required><br>
+            <label for="adresseEntreprise">Adresse de l'entreprise</label>
+            <input type="text" id="adresseEntreprise" name="AdresseEntreprise" placeholder="Adresse de l'entreprise" required><br>
+            <label for="dateCandidature">Date de candidature</label>
+            <input type="date" id="dateCandidature" name="date" required><br>
+            <label for="descriptif">Descriptif du poste</label>
+            <input type="text" id="descriptif" name="Descriptif" placeholder="Descriptif du poste" required><br>
+    
+            <input type="submit" id="submit" value="Ajouter">
+        </form>
+    </div>   
+    <footer>
+        <div class="footer-content">
+          <p>Toujours pour vous aider.</p>
+        </div>
+      </footer>
+</body>
+<style>
+body {
+    background: #fff0d4;
+}
+
+#container {
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 10%;
+}
+
+form {
+    width: 100%;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#container h1 {
+    width: 40%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #53af57;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: white;
+    color: #53af57;
+    border: 1px solid #53af57;
+}
+
+footer {
+  background-color: #463e3e;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+}
+</style>
+</html>
